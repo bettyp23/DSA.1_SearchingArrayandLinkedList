@@ -11,12 +11,14 @@ int main(){
     int min = 500; 
     int max = 1000;
 
-    bool isfound = false;
+    bool isfound = false;   // initialized if number is found, Defaulted to not found
 
     int array[SIZE];        // initialize array of integers with 500 elements
 
+    srand(time(0));         // seed set for generating numbers
+
     // Each element in array is random between 500 and 1000
-    for (int i ; i < SIZE; ++i){
+    for (int i = 0; i < SIZE; ++i){
         array[i] = min + rand() % (max - min + 1); 
     }
 
@@ -38,13 +40,11 @@ int main(){
     chrono::duration<double> elapsed = end - start;
 
     // Print results
-    if (isfound){
+    if (index != -1){
         cout << "Number " << target << " was found at index " << index << " in " << elapsed.count() << " seconds." << endl;
     } else {
         cout << "Number  " << target << " was not found. Total time: " << elapsed.count() << " seconds." << endl;
     }
-
-    srand(time(0));         // Seed using current time (0)
 
     return 0;
 }
