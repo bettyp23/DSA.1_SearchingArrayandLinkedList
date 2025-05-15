@@ -16,7 +16,9 @@ void ArraySearch(){
 
     int array[SIZE];        // initialize array of integers with 500 elements
 
-    srand(time(0));         // seed set for generating numbers
+    // Using nanoseconds because the whole loop runs in less than one second
+    unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    srand(seed);
 
     // Each element in array is random between 500 and 1000
     for (int i = 0; i < SIZE; ++i){

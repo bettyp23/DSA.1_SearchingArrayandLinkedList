@@ -19,7 +19,9 @@ void LinkedListSearch(){
     int target = 786;       //  target number to search
     int position = -1;         // index to store position of the target
 
-    srand(time(0));         // seed set for generating numbers
+    // Using nanoseconds because the whole loop runs in less than one second
+    unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    srand(seed);
 
     // Create the head node
     Node* head = new Node;
