@@ -28,7 +28,7 @@ int main(){
     auto start = chrono::high_resolution_clock::now();  // Recording start time of search
 
     // Linear search to find target
-    for (int i = 0; i < SIZE; ++i){
+    for (int i = 0; i < SIZE && index == -1; ++i){      //will exit program if number is found
         if (array[i] == target){
             isfound = true;    // if current element matches the target, set to true
             index = i;              // store the index where target is found
