@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>    // Seed random number generator
+#include <chrono>   // Measures time
+
+using namespace std;
+
+int main(){
+    const int SIZE = 500;   // Constant ax size of array
+    int array[SIZE];        // initialize array of integers with 500 elements
+
+    srand(time(0));         // Seed using current time (0)
+
+    return 0;
+}
