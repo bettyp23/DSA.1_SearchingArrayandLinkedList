@@ -44,6 +44,6 @@ void ArraySearch(){
     if (index != -1){
         cout << "Number " << target << " was found at index " << index << " in " << elapsed.count() << " seconds." << endl;
     } else {
-        cout << "Number " << target << " was not found. Total time: " << elapsed.count() << " seconds." << endl;
+        cout << "nil. Total time: " << elapsed.count() << " seconds." << endl;
     }
 }
