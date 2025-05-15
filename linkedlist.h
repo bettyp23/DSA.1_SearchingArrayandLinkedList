@@ -1,1 +1,1 @@
-void LinkedlistSearch();
+void LinkedListSearch();
