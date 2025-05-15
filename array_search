@@ -11,6 +11,8 @@ int main(){
     int min = 500; 
     int max = 1000;
 
+    bool isfound = false;
+
     int array[SIZE];        // initialize array of integers with 500 elements
 
     // Each element in array is random between 500 and 1000
@@ -21,12 +23,25 @@ int main(){
     int target = 786;       //  target number to search
     int index = -1;         // index to store position of the target
 
+    auto start = chrono::high_resolution_clock::now();  // Recording start time of search
+
     // Linear search to find target
     for (int i = 0; i < SIZE; ++i){
         if (array[i] == target){
-            bool isfound = true;    // if current element matches the target, set to true
+            isfound = true;    // if current element matches the target, set to true
             index = i;              // store the index where target is found
         }
+    }
+
+    auto end = chrono::high_resolution_clock::now();    // Recording end time of search
+
+    chrono::duration<double> elapsed = end - start;
+
+    // Print results
+    if (isfound){
+        cout << "Number " << target << " was found at index " << index << " in " << elapsed.count() << " seconds." << endl;
+    } else {
+        cout << "Number  " << target << " was not found. Total time: " << elapsed.count() << " seconds." << endl;
     }
 
     srand(time(0));         // Seed using current time (0)
