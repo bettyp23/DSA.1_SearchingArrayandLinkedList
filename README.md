@@ -1,22 +1,40 @@
 # DSA.1_SearchingArrayandLinkedList
-This program creates an array of size 500 of type integer and fills it with random numbers between 500 and 1000. It then searches the array for the number **786**.
 
-- If the number is found:
-  - Prints the array index where the number was found.
-  - Displays the time taken to perform the search.
-  
-- If the number is not found:
-  - Prints `nil`.
-  - Displays the time taken to perform the search.
+## Linear Search: Array vs. Linked List
+This project implements and compares two approaches to performing a linear search for the number **786** in a dataset of 500 randomly generated integers between **500 and 1000**.
 
-## Features
-- Random number generation between 500 and 1000
-- Linear search for target value 786
-- Output of search index (if found) and execution time
+### Implementations:
+
+- `array.cpp`: Uses a fixed-size array to store the integers.
+- `linkedlist.cpp`: Uses a singly linked list instead of an array.
+- `main.cpp`: Runs both versions **10 times each** and prints the runtime for each search operation.
+
+---
+
+## What Each Program Does
+
+### Array Version (`array.cpp`)
+- Fills an array of 500 integers with random values between 500 and 1000.
+- Searches for the number 786 using a linear search.
+- Prints the index if found, or "not found".
+- Displays the time taken to perform the search.
+
+### Linked List Version (`linkedlist.cpp`)
+- Creates a singly linked list with 500 nodes containing random values between 500 and 1000.
+- Searches for the number 786 node by node.
+- Prints the node position if found, or "not found".
+- Displays the time taken to perform the search.
+- Frees all dynamically allocated memory.
+
+### Search (`main.cpp`)
+- Calls `ArraySearch()` 10 times.
+- Calls `LinkedListSearch()` 10 times.
+- Displays results for each run, allowing a basic performance comparison between the array and linked list approaches.
+
+---
 
 ## Usage
-Compile and run the program using your preferred C++ compiler.
 
-```bash
-g++ -o array_search main.cpp
-./array_search
+### Compile All Programs Together
+g++ -o Search main.cpp array.cpp linkedlist.cpp
+./Search
